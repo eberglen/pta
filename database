@@ -1,0 +1,42 @@
+create database pta;
+use pta;
+
+CREATE TABLE users(
+user_num int(48) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+nccid TINYTEXT NOT NULL,
+password LONGTEXT NOT NULL,
+fname VARCHAR(64),
+mname VARCHAR(64),
+lname VARCHAR(64),
+birth DATE,
+email VARCHAR(64),
+mnum VARCHAR(64),
+gym VARCHAR(64),
+instructor VARCHAR(64),
+region VARCHAR(64),
+belt_level VARCHAR(64),
+gender VARCHAR(64),
+division VARCHAR(64),
+approval VARCHAR(24)
+);
+
+CREATE TABLE tournament(
+tour_num int(48) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+title VARCHAR(128),
+tour_category VARCHAR(24),
+dstart DATE,
+dend DATE,
+date_posted DATETIME,
+location VARCHAR(128),
+description VARCHAR(1024)
+);
+
+CREATE TABLE tour_users(
+user_num int,
+tour_num int
+);
+
+CREATE TABLE nccid(
+nccid_num int(48) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+nccid VARCHAR(24)
+);
